@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Adusumilli</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div>
+        <form onsubmit="redirectToUrl(); return false;">
+            <label for="myName">Enter name to get guess age and gender: </label>
+            <input type="text" id="myName" name="name" placeholder="Name" required>
+            <button type="submit">Guess</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToUrl() {
+            const name = document.getElementById("myName").value;
+            const url = `/${encodeURIComponent(name)}`; // Construct the URL
+            window.location.href = url; // Redirect to the constructed URL
+        }
+    </script>
+
+    <footer>
+        <p>©{{ year }} Vinay Adusumilli</p>
+    </footer>
+</body>
+</html>
